@@ -1,0 +1,8 @@
+services:
+  redis:
+    image: redis
+    env_file:
+      - .env
+    command: redis-server 
+    ports:
+      - "6379:6379"

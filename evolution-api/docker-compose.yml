@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  evolution-api:
+    container_name: evolution_api
+    image: atendai/evolution-api:v2.1.1
+    restart: always
+    ports:
+       - ${PORT_MAP}
+    env_file:
+      - .env
+    volumes:
+      - .evolution_instances:/evolution/instances
+      - .evolution_store:/evolution/store
+
+volumes:
+  evolution_instances:

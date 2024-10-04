@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  browserless:
+    image: browserless/chrome
+    container_name: browserless
+    env_file: ".env"
+    ports:
+       - ${PORT_MAP}
+    volumes:
+      - browserless-data:/usr/src/app/data
+    restart: unless-stopped
+    environment:
+      - PREBOOT_CHROME=${PREBOOT_CHROME}
+      - MAX_CONCURRENT_SESSIONS=${MAX_CONCURRENT_SESSIONS}
+      - CONNECTION_TIMEOUT=${CONNECTION_TIMEOUT}
+      - QUEUE_LENGTH=${QUEUE_LENGTH}
+
+volumes:
+  browserless-data:
+    driver: local
