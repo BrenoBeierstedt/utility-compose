@@ -10,3 +10,4 @@ services:
     volumes:
         - ./.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ./.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
