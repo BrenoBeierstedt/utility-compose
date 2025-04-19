@@ -1,8 +1,17 @@
 services:
   redis:
+    restart: always
     image: redis
     env_file:
       - .env
     command: redis-server 
     ports:
       - "6379:6379"
+    networks:
+      - syncmate_hom
+
+
+networks:
+  syncmate_hom:
+    external: true
+

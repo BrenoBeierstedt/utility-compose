@@ -1,11 +1,11 @@
-version: '3.9'
+
 services:
   evolution-api:
     container_name: evolution_api
-    image: atendai/evolution-api:v2.1.1
+    image: atendai/evolution-api:v2.2.3
     restart: always
     ports:
-       - ${PORT_MAP}
+       - "8888:8080"
     env_file:
       - .env
     volumes:
