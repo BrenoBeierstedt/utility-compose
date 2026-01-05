@@ -11,3 +11,9 @@ services:
         - ./.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ./.docker-conf/rabbitmq/log/:/var/log/rabbitmq
         - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+    networks:
+      - syncmate_hom
+
+networks:
+  syncmate_hom:
+    external: true
